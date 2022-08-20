@@ -5,23 +5,27 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="characters")
-public class Character {
-
-	@NotEmpty
-	@Email(message="What is the name of the room?")
-	private String name;
+@Table(name="comments")
+public class Comment {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Size(min =2, max=128)
+	private String comment;
 	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -38,13 +42,25 @@ public class Character {
     }
     
     @ManyToOne (fetch=FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User user;
+    
+    @ManyToOne (fetch=FetchType.LAZY)
     @JoinColumn(name="room_id")
     private Room room;
-	public String getName() {
-		return name;
+    
+    
+	public Long getId() {
+		return id;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 	public Date getCreatedAt() {
 		return createdAt;
@@ -58,13 +74,20 @@ public class Character {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Room getRoom() {
 		return room;
 	}
 	public void setRoom(Room room) {
 		this.room = room;
 	}
-	public Character() {
-	}   
+	public Comment() {
+	}
+    
     
 }
