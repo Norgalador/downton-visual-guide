@@ -29,8 +29,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty
-	@Email(message="What is your name?")
+	@NotEmpty(message="What is your name?")
 	private String name;
 	
 	@NotEmpty

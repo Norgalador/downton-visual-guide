@@ -97,23 +97,23 @@
 			<div class="container card top-buffer">
 				<div class="card-img-overlay col-6 offset-3">
 					<div class="card-header mask-custom shadow-0 h4">Register your account</div>
-					<form:form class="card-body mask-custom shadow-0" action="/register" method="POST">
+					<form:form class="card-body mask-custom shadow-0" action="/register" method="POST" modelAttribute="newUser">
 						<div class="form-floating mb-3 p-2">
-							<input type="text" class="form-control" id="floatingEmail"
-								placeholder="username"> <label for="name">Username</label>
+							<form:input type="text" class="form-control" id="floatingEmail"
+								placeholder="username" path="name"/> <label for="name">Username</label>
 						</div>
 						<div class="form-floating mb-3 p-2">
-							<input type="email" class="form-control" id="floatingEmail"
-								placeholder="name@example.com"> <label for="email">Email
+							<form:input type="email" class="form-control" id="floatingEmail"
+								placeholder="name@example.com" path="email"/> <label for="email">Email
 								address</label>
 						</div>
 						<div class="form-floating mb-3 p-2">
-							<input type="password" class="form-control" id="floatingPassword"
-								placeholder="Password"> <label for="password">Password</label>
+							<form:input type="password" class="form-control" id="floatingPassword"
+								placeholder="Password" path="password"/> <label for="password">Password</label>
 						</div>
 						<div class="form-floating mb-3 p-2">
-							<input type="password" class="form-control"
-								id="floatingPasswordConfirm" placeholder="Confirm Password">
+							<form:input type="password" class="form-control"
+								id="floatingPasswordConfirm" placeholder="Confirm Password" path="confirm"/>
 							<label for="confirm">Confirm Password</label>
 						</div>
 						<button type="submit" class="btn btn-secondary btn-lg mt-3">Register</button>

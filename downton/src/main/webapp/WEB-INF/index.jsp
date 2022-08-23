@@ -50,15 +50,15 @@
 							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
 								<h3 class="dropdown-header" id="login-header">Login to the
 									site below:</h3>
-								<form:form class="px-5 py-4" action="/login" method="POST">
+								<form:form class="px-5 py-4" action="/login" method="POST" modelAttribute="newLogin">
 									<div class="form-floating mb-3 p-2">
-										<input type="email" class="form-control" id="floatingEmail"
-											placeholder="name@example.com"> <label
+										<form:input type="email" class="form-control" id="floatingEmail"
+											placeholder="name@example.com" path="email"/> <label
 											for="email">Email address</label>
 									</div>
 									<div class="form-floating mb-3 p-2">
-										<input type="password" class="form-control"
-											id="floatingPassword" placeholder="Password"> <label
+										<form:input type="password" class="form-control"
+											id="floatingPassword" placeholder="Password" path="password"/> <label
 											for="password">Password</label>
 									</div>
 									<!-- <div class="mb-3">

@@ -60,7 +60,7 @@ public String loginUser(@Valid @ModelAttribute("newLogin") LoginUser loginUser, 
 	}
 	User loggedUser=users.findByEmail(loginUser.getEmail());
 	session.setAttribute("loggedUser", loggedUser.getId());
-	return "redirect:/main";
+	return "redirect:/dashboard";
 }
 
 // Logout
@@ -84,9 +84,12 @@ public String register(Model model) {
 
 @PostMapping("/register")
 public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser loginUser) {
-users.validate(user, result);
+	users.validate(user, result);
+	System.out.println("1");
+	System.out.println(user);
+	System.out.println(result);
 	if(result.hasErrors()) {
-	    return "register.jsp";
+	    return "index.jsp";
 }
 	users.registerUser(user);
 	session.setAttribute("loggedUser", user.getId());
@@ -95,9 +98,9 @@ users.validate(user, result);
 
 // Dashboard (main) page route
 		    
-@GetMapping("/main")
+@GetMapping("/dashboard")
 public String main (HttpSession session, Model model) {
-	if (session.getAttribute("userId") == null) {
+	if (session.getAttribute("loggedUser") == null) {
 	return "redirect:/";
 	}
 	model.addAttribute("user", users.findById((Long)session.getAttribute("loggedUser")));
