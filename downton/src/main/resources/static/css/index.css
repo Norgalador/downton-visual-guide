@@ -48,3 +48,8 @@
 .dropdown-menu {
     font-size: 1.5rem;
 }
+
+#login-button {
+	color: black;
+	font-size: 1em;
+}
