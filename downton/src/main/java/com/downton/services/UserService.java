@@ -19,9 +19,11 @@ public class UserService {
 			//password matching
 			if(!user.getPassword().equals(user.getConfirm())) {
 				errors.rejectValue("password", "mismatch", "Password does not match");
+				System.out.println("error 1");
 				//check for duplicate email
 			if(userRepo.findByEmail(user.getEmail())!=null) {
 				errors.rejectValue("email", "unique", "Email is already taken");
+				System.out.println("error 2");
 			}
 		}
 	}
