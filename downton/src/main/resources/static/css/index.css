@@ -46,10 +46,15 @@
 }
 
 .dropdown-menu {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    min-width: 375px;
 }
 
 #login-button {
 	color: black;
 	font-size: 1em;
+}
+
+#login-header {
+	font-size: 1.7rem;
 }

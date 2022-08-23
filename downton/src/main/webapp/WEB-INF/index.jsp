@@ -45,28 +45,28 @@
 						<div class="dropdown">
 							<a type="button" class="btn btn-link btn-lg"
 								data-bs-toggle="dropdown" id="login-button"> Login </a>
-							<div class="dropdown-menu dropdown-menu-dark p-3 m-3">
-								<h3 class="dropdown-header">Login to the site below:</h3>
-								<form class="px-7 py-4">
-									<div class="mb-3">
-										<label for="exampleDropdownFormEmail1" class="form-label">Email
-											address</label> <input type="email" class="form-control"
-											id="exampleDropdownFormEmail1"
-											placeholder="email@example.com">
+							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
+								<h3 class="dropdown-header" id="login-header">Login to the
+									site below:</h3>
+								<form class="px-5 py-4">
+									<div class="form-floating mb-3 p-2">
+										<input type="email" class="form-control" id="floatingInput"
+											placeholder="name@example.com"> <label
+											for="floatingInput">Email address</label>
 									</div>
-									<div class="mb-3">
-										<label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+									<div class="form-floating mb-3 p-2">
 										<input type="password" class="form-control"
-											id="exampleDropdownFormPassword1" placeholder="Password">
+											id="floatingPassword" placeholder="Password"> <label
+											for="floatingPassword">Password</label>
 									</div>
-									<div class="mb-3">
+									<!-- <div class="mb-3">
 										<div class="form-check">
 											<input type="checkbox" class="form-check-input"
 												id="dropdownCheck"> <label class="form-check-label"
 												for="dropdownCheck"> Remember me </label>
 										</div>
-									</div>
-									<button type="submit" class="btn btn-primary">Sign in</button>
+									</div> -->
+									<button type="submit" class="btn btn-secondary btn-lg mt-3">Sign in</button>
 								</form>
 							</div>
 						</div>
