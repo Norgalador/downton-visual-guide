@@ -88,36 +88,43 @@
 			</div>
 		</nav>
 		<!-- End navbar -->
-		<section>
-			<div id="intro" class="bg-image vh-100">
-				<div class="mask"
-					style="background-color: rgba(250, 182, 162, 0.15);"></div>
-		</section>
 	</header>
+	<section>
+		<div id="intro" class="bg-image vh-100">
+			<div class="mask"
+				style="background-color: rgba(250, 182, 162, 0.15);"></div>
+			<!-- registration form -->
+			<div class="container card top-buffer">
+				<div class="card-img-overlay col-6 offset-3">
+					<div class="card-header mask-custom shadow-0 h4">Register your account</div>
+					<form:form class="card-body mask-custom shadow-0" action="/register" method="POST">
+						<div class="form-floating mb-3 p-2">
+							<input type="text" class="form-control" id="floatingEmail"
+								placeholder="username"> <label for="name">Username</label>
+						</div>
+						<div class="form-floating mb-3 p-2">
+							<input type="email" class="form-control" id="floatingEmail"
+								placeholder="name@example.com"> <label for="email">Email
+								address</label>
+						</div>
+						<div class="form-floating mb-3 p-2">
+							<input type="password" class="form-control" id="floatingPassword"
+								placeholder="Password"> <label for="password">Password</label>
+						</div>
+						<div class="form-floating mb-3 p-2">
+							<input type="password" class="form-control"
+								id="floatingPasswordConfirm" placeholder="Confirm Password">
+							<label for="confirm">Confirm Password</label>
+						</div>
+						<button type="submit" class="btn btn-secondary btn-lg mt-3">Register</button>
+					</form:form>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<!-- registration form -->
-	<div class="">
-		<form:form action="/register" method="POST">
-			<div class="mb-3 p-2">
-				<input type="text" class="form-control" id="floatingEmail"
-					placeholder="username"> <label for="name">Username</label>
-			</div>
-			<div class="mb-3 p-2">
-				<input type="email" class="form-control" id="floatingEmail"
-					placeholder="name@example.com"> <label for="email">Email
-					address</label>
-			</div>
-			<div class="mb-3 p-2">
-				<input type="password" class="form-control" id="floatingPassword"
-					placeholder="Password"> <label for="password">Password</label>
-			</div>
-			<div class="mb-3 p-2">
-				<input type="password" class="form-control" id="floatingPasswordConfirm"
-					placeholder="Confirm Password"> <label for="confirm">Confirm Password</label>
-			</div>
-			<button type="submit" class="btn btn-secondary btn-lg mt-3">Register</button>
-		</form:form>
-	</div>
+
+
 
 
 
