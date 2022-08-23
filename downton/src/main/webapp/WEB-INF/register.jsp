@@ -50,7 +50,7 @@
 							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
 								<h3 class="dropdown-header" id="login-header">Login to the
 									site below:</h3>
-								<form:form class="px-5 py-4" action="/login" method="POST">
+								<form:form class="px-5 py-4" action="/login" method="POST" modelAttribute="newLogin">
 									<div class="form-floating mb-3 p-2">
 										<form:input type="email" class="form-control"
 											placeholder="name@example.com" path="email" />
@@ -103,23 +103,23 @@
 						<div class="form-floating mb-3 p-2">
 							<form:input type="text" class="form-control" id="floatingEmail"
 								placeholder="username" path="name" />
-							<label for="name">Username</label>
+							<form:label path="name">Username</form:label>
 						</div>
 						<div class="form-floating mb-3 p-2">
 							<form:input type="email" class="form-control" id="floatingEmail"
 								placeholder="name@example.com" path="email" />
-							<label for="email">Email address</label>
+							<form:label path="email">Email address</form:label>
 						</div>
 						<div class="form-floating mb-3 p-2">
 							<form:input type="password" class="form-control"
 								id="floatingPassword" placeholder="Password" path="password" />
-							<label for="password">Password</label>
+							<form:label path="password">Password</form:label>
 						</div>
 						<div class="form-floating mb-3 p-2">
 							<form:input type="password" class="form-control"
 								id="floatingPasswordConfirm" placeholder="Confirm Password"
 								path="confirm" />
-							<label for="confirm">Confirm Password</label>
+							<form:label path="confirm">Confirm Password</form:label>
 						</div>
 						<button type="submit" class="btn btn-secondary btn-lg mt-3">Register</button>
 					</form:form>

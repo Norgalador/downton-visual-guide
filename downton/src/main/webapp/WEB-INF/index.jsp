@@ -50,16 +50,16 @@
 							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
 								<h3 class="dropdown-header" id="login-header">Login to the
 									site below:</h3>
-								<form:form class="px-5 py-4" action="/login" method="POST">
+								<form:form class="px-5 py-4" action="/login" method="POST" modelAttribute="newLogin">
 									<div class="form-floating mb-3 p-2">
-										<input type="email" class="form-control" id="floatingEmail"
-											placeholder="name@example.com"> <label
-											for="email">Email address</label>
+										<form:input type="email" class="form-control"
+											placeholder="name@example.com" path="email" />
+										<form:label path="email">Email address</form:label>
 									</div>
 									<div class="form-floating mb-3 p-2">
-										<input type="password" class="form-control"
-											id="floatingPassword" placeholder="Password"> <label
-											for="password">Password</label>
+										<form:input type="password" class="form-control"
+											placeholder="Password" path="password" />
+										<form:label path="password">Password</form:label>
 									</div>
 									<!-- <div class="mb-3">
 										<div class="form-check">
@@ -68,7 +68,8 @@
 												for="dropdownCheck"> Remember me </label>
 										</div>
 									</div> -->
-									<button type="submit" class="btn btn-secondary btn-lg mt-3">Sign in</button>
+									<button type="submit" class="btn btn-secondary btn-lg mt-3">Sign
+										in</button>
 								</form:form>
 							</div>
 						</div>
