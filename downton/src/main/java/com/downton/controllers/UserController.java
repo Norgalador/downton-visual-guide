@@ -103,8 +103,7 @@ public String main (HttpSession session, Model model) {
 	model.addAttribute("user", users.findById((Long)session.getAttribute("loggedUser")));
 	model.addAttribute("comments", comments.all());
 	model.addAttribute("rooms", rooms.findAll());
-// 	We need to set up character service
-//	model.addAttribute("characters", characters.all());
+	model.addAttribute("characters", characters.all());
 
 	return "dashboard.jsp";
 }
