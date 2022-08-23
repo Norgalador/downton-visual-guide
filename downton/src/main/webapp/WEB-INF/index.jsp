@@ -50,15 +50,15 @@
 							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
 								<h3 class="dropdown-header" id="login-header">Login to the
 									site below:</h3>
-								<form:form class="px-5 py-4" action="/login" method="POST" modelAttribute="newLogin">
+								<form:form class="px-5 py-4" action="/login" method="POST">
 									<div class="form-floating mb-3 p-2">
-										<form:input type="email" class="form-control" id="floatingEmail"
-											placeholder="name@example.com" path="email"/> <label
+										<input type="email" class="form-control" id="floatingEmail"
+											placeholder="name@example.com"> <label
 											for="email">Email address</label>
 									</div>
 									<div class="form-floating mb-3 p-2">
-										<form:input type="password" class="form-control"
-											id="floatingPassword" placeholder="Password" path="password"/> <label
+										<input type="password" class="form-control"
+											id="floatingPassword" placeholder="Password"> <label
 											for="password">Password</label>
 									</div>
 									<!-- <div class="mb-3">
@@ -89,8 +89,8 @@
 		<!-- End navbar -->
 		<section>
 			<div id="intro" class="bg-image vh-100">
-				<div class="mask"
-					style="background-color: rgba(250, 182, 162, 0.15);"></div>
+				<div class="mask"></div>
+			</div>
 		</section>
 	</header>
 
