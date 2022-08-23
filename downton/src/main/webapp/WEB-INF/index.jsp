@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,16 +50,16 @@
 							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
 								<h3 class="dropdown-header" id="login-header">Login to the
 									site below:</h3>
-								<form class="px-5 py-4">
+								<form:form class="px-5 py-4" action="/login" method="POST">
 									<div class="form-floating mb-3 p-2">
-										<input type="email" class="form-control" id="floatingInput"
+										<input type="email" class="form-control" id="floatingEmail"
 											placeholder="name@example.com"> <label
-											for="floatingInput">Email address</label>
+											for="email">Email address</label>
 									</div>
 									<div class="form-floating mb-3 p-2">
 										<input type="password" class="form-control"
 											id="floatingPassword" placeholder="Password"> <label
-											for="floatingPassword">Password</label>
+											for="password">Password</label>
 									</div>
 									<!-- <div class="mb-3">
 										<div class="form-check">
@@ -67,14 +69,14 @@
 										</div>
 									</div> -->
 									<button type="submit" class="btn btn-secondary btn-lg mt-3">Sign in</button>
-								</form>
+								</form:form>
 							</div>
 						</div>
 						<!-- End dropdown -->
 
 						<!-- nav links -->
 						<ul class="navbar-nav me-auto offset-1">
-							<li class="nav-item"><a class="nav-link" href="#!">Register</a>
+							<li class="nav-item"><a class="nav-link" href="/registration">Register</a>
 							</li>
 							<li class="nav-item"><a class="nav-link" href="#!">Wiki</a></li>
 							<li class="nav-item"><a class="nav-link" href="#!">About</a>
