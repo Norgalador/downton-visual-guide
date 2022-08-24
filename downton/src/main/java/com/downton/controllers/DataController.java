@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.downton.models.Room;
+import com.downton.models.Character;
+import com.downton.services.CharacterService;
 import com.downton.services.RoomService;
 
 @RequestMapping("/api")
@@ -19,6 +21,8 @@ public class DataController {
 	
 	@Autowired
 	private RoomService rooms;
+	@Autowired
+	private CharacterService characters;
 	
 	@PostMapping("/rooms/create")
 	public Room createRooms(@Valid @RequestParam(value="name")String name) {
@@ -32,4 +36,17 @@ public class DataController {
 		updateRoom.setName("name");
 		return rooms.update(updateRoom);
 	}
+	
+	@PostMapping("/characters/create")
+	public Character createCharacters(@Valid @RequestParam(value="name")String name) {
+		Character newCharacter = new Character(name);
+		return characters.create(newCharacter);
+	}
+	@PutMapping("/characters/update/{id}")
+	public Character updateCharacters( @PathVariable Long id, @RequestParam(value="name")String name) {
+		Character updateCharacter = characters.getOne(id);
+		updateCharacter.setName("name");
+		return characters.update(updateCharacter);
+	}
+	
 }

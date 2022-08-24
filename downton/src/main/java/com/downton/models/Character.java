@@ -69,6 +69,10 @@ public class Character {
 		this.room = room;
 	}
 	public Character() {
+	}
+	public Character(@NotEmpty(message = "What is the name of the room?") String name) {
+		super();
+		this.name = name;
 	}   
     
 }

@@ -38,7 +38,7 @@ public class RoomController {
 	@GetMapping("/room/{id}")
 	public String viewRoom(@PathVariable Long id, Model model, @ModelAttribute("newComment") Comment comment, Room room) {
 		model.addAttribute("room", rooms.getOne(id));
-		model.addAttribute("comment", comments.create(comment));
+		model.addAttribute("newComment", comments.create(comment));
 		model.addAttribute("allComments", comments.all());
 		return "room.jsp";
 	}
