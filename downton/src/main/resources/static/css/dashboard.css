@@ -1,4 +1,4 @@
-/* This css template used for both register.jsp and index.jsp */
+/* This css template used for dashboard.jsp */
 
 .body {
 	font-family: 'Wire One', Helvetica, Arial, sans-serif;
@@ -45,9 +45,12 @@
 }
 
 .bg-image {
-    background-image: url('https://images.alphacoders.com/756/756534.jpg');
-    background-size: 100%;
+   /*  background-size: 100%; */
+   	width: 100%;
+   	height: 100%;
     background-color: rgba(250, 182, 162, 0.15);
+    background-size: cover;
+    background-image: url('/media/entirecast.webp');
   
 }
 
@@ -73,32 +76,7 @@
 	margin-top: 125px;
 }
 
-.typewriter {
-	margin-top: 350px;
-	font-family: 'Wire One', Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 4rem;
-    width: 22ch;
-  	animation: typing 2s steps(22), blink .5s step-end alternate;
-  	animation-iteration-count: 1;
-  	white-space: nowrap;
-  	overflow: hidden;
-  	border-right: 3px solid;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-}
-    
-@keyframes blink {
-  75% {
-    border-color: transparent
-  }
-}
-
- .toast {
+.toast {
 	margin-top: 200px;
 	
 }

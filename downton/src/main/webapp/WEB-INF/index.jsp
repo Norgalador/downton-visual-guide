@@ -50,7 +50,8 @@
 							<div class="dropdown-menu p-3 m-3 mask-custom shadow-0">
 								<h3 class="dropdown-header" id="login-header">Login to the
 									site below:</h3>
-								<form:form class="px-5 py-4" action="/login" method="POST" modelAttribute="newLogin">
+								<form:form class="px-5 py-4" action="/login" method="POST"
+									modelAttribute="newLogin">
 									<div class="form-floating mb-3 p-2">
 										<form:input type="email" class="form-control"
 											placeholder="name@example.com" path="email" />
@@ -77,22 +78,54 @@
 
 						<!-- nav links -->
 						<ul class="navbar-nav me-auto offset-1">
-							<li class="nav-item"><a class="nav-link" href="/registration">Register</a>
-							</li>
+							<li class="nav-item"><a class="nav-link"
+								href="/registration">Register</a></li>
 							<li class="nav-item"><a class="nav-link" href="#!">Wiki</a></li>
-							<li class="nav-item"><a class="nav-link" href="#!">About</a>
-							</li>
+							<li class="nav-item"><a class="nav-link" id="myBtn"
+								href="#!">About</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</nav>
 		<!-- End navbar -->
+
+		<!-- background image -->
 		<section>
-			<div id="intro" class="bg-image vh-100">
-				<div class="mask"></div>
+			<div id="intro" class="bg-image text-center vh-100">
+				
+				<!-- Typewriter welcome message -->
+				<div class="typewriter-wrap d-flex justify-content-center align-items-center ">
+					<div class="typewriter mask-custom h4">
+						Welcome to Downton Abbey
+					</div>
+				</div>
+
+				<!-- About section toast (pop-up) -->
+				<!-- Flexbox container for aligning the toast -->
+				<div  aria-live="polite" aria-atomic="true"
+					class="d-flex justify-content-center align-items-center w-100 ">
+					<div class="toast p-3" data-bs-autohide="false" id="myToast">
+						<div class="toast-header">
+							<strong class="me-auto"><i class="bi-gift-fill"></i>
+								About <br> Downton: A Visual Guide</strong>
+							<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+						</div>
+						<div class="toast-body h6">Discover the chambers of Highclere
+							Castle, the factual residence of the English royalty and the
+							setting of the popular TV series Downton Abbey! This visual guide
+							will cast light on lives of lords, ladies and servants of the
+							estate. Interact, learn and leave comments as you navigate
+							through the marvelous world of the castle dating all the way
+							back to the 8th century.</div>
+					</div>
+				</div>
+				<!-- End custom toast (pop-up) -->
+
 			</div>
 		</section>
+
+
 	</header>
 
 
@@ -102,5 +135,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
 		crossorigin="anonymous"></script>
+	<!-- Custom JS for toast (pop-up) -->
+	<script src="/js/toastAbout.js"></script>
 </body>
 </html>
