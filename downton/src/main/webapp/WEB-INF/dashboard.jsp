@@ -43,10 +43,10 @@
 
 
 						<!-- nav links -->
-						<ul class="navbar-nav me-auto offset-1">
+						<ul class="navbar-nav me-auto">
 							<li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
 							</li>
-							<li class="nav-item"><a class="nav-link" href="#!">Wiki</a></li>
+							<li class="nav-item"><a class="nav-link" href="/room/1">Room Test</a></li>
 							<li class="nav-item"><a class="nav-link" id="myBtn"
 								href="#!">About</a></li>
 						</ul>
