@@ -60,7 +60,34 @@
 		<div class="bg-image vh-100 mask">
 			<div class="mask"
 				style="background-color: rgba(250, 182, 162, 0.15);"></div>
-			
+
+			<!-- Dropdown table for the rooms -->
+			<div class="container">
+				<div class="d-flex justify-content-center align-items-center row"
+					id="room-table">
+
+					<button class="btn btn-secondary col-4" id="room-table-btn"
+						data-bs-toggle="collapse" data-bs-target="#roomtable">Discover
+						Downton Estate</button>
+
+					<div class="collapse card card-body opacity-75"
+						id="roomtable">
+						<table>
+							<tr>
+								<th>Room Name</th>
+								<th>Room Preview</th>
+							</tr>
+							<tr>
+								<td>Room Name Here</td>
+								<td>Room Preview Photo Here</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<!-- End dropdown table -->
+
 			<!-- About section toast (pop-up) -->
 			<!-- Flexbox container for aligning the toast -->
 			<div aria-live="polite" aria-atomic="true"
