@@ -74,13 +74,19 @@
 						id="roomtable">
 						<table>
 							<tr>
+							
 								<th>Room Name</th>
+							
 								<th>Room Preview</th>
 							</tr>
-							<tr>
-								<td>Room Name Here</td>
-								<td>Room Preview Photo Here</td>
+							<c:forEach items="${rooms}" var="room">
+								 
+							<tr>			
+								<td>${room.name}</td>
+								<td><img style="height: 60px"src="${room.image}" ></td>
+
 							</tr>
+							</c:forEach>
 						</table>
 					</div>
 				</div>
