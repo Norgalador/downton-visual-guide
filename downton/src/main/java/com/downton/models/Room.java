@@ -13,7 +13,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,8 +26,7 @@ public class Room {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty
-	@Email(message="What is the name of the room?")
+	@NotEmpty(message="What is the name of the room?")
 	private String name;
 	
 	@Column(updatable=false)
@@ -89,6 +87,10 @@ public class Room {
 		this.characters = characters;
 	}
 	public Room() {
+	}
+	public Room(@NotEmpty(message = "What is the name of the room?") String name) {
+		super();
+		this.name = name;
 	}
        
 }
