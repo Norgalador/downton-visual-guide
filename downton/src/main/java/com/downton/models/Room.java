@@ -29,6 +29,8 @@ public class Room {
 	@NotEmpty(message="What is the name of the room?")
 	private String name;
 	
+	private String image;
+	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
@@ -86,11 +88,20 @@ public class Room {
 	public void setCharacters(List<Character> characters) {
 		this.characters = characters;
 	}
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public Room() {
 	}
-	public Room(@NotEmpty(message = "What is the name of the room?") String name) {
+	public Room(@NotEmpty(message = "What is the name of the room?") String name, String image) {
 		super();
 		this.name = name;
+		this.image = image;
 	}
+	
        
 }

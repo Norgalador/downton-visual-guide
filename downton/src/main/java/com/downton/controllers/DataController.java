@@ -1,8 +1,11 @@
 package com.downton.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,6 +31,11 @@ public class DataController {
 	public Room createRooms(@Valid @RequestParam(value="name")String name) {
 		Room newRoom = new Room(name);
 		return rooms.create(newRoom);
+	}
+	
+	@GetMapping ("/rooms/view")
+	public List< Room> viewRooms( ) {
+		return rooms.findAll();
 	}
 
 	@PutMapping("/rooms/update/{id}")
