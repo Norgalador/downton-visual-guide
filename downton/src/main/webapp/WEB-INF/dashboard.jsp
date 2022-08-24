@@ -60,7 +60,7 @@
 		<div class="bg-image vh-100 mask">
 			<div class="mask"
 				style="background-color: rgba(250, 182, 162, 0.15);"></div>
-
+			
 			<!-- About section toast (pop-up) -->
 			<!-- Flexbox container for aligning the toast -->
 			<div aria-live="polite" aria-atomic="true"

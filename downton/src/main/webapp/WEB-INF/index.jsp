@@ -93,14 +93,20 @@
 		<!-- background image -->
 		<section>
 			<div id="intro" class="bg-image text-center vh-100">
-				<div class="mask"></div>
+				
+				<!-- Typewriter welcome message -->
+				<div class="typewriter-wrap d-flex justify-content-center align-items-center ">
+					<div class="typewriter mask-custom h4">
+						Welcome to Downton Abbey
+					</div>
+				</div>
 
 				<!-- About section toast (pop-up) -->
 				<!-- Flexbox container for aligning the toast -->
 				<div  aria-live="polite" aria-atomic="true"
 					class="d-flex justify-content-center align-items-center w-100 ">
 					<div class="toast p-3" data-bs-autohide="false" id="myToast">
-						<div class="toast-header h5">
+						<div class="toast-header">
 							<strong class="me-auto"><i class="bi-gift-fill"></i>
 								About <br> Downton: A Visual Guide</strong>
 							<button type="button" class="btn-close" data-bs-dismiss="toast"></button>
