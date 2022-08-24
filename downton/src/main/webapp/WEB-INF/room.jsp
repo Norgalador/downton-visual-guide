@@ -20,7 +20,7 @@
 	rel="stylesheet" type="text/css">
 <link href="/css/room.css" rel="stylesheet" type="text/css">
 <title>Downton: A Visual Guide</title>
-<body>
+<body style="background-color:  #cbbcb1;">
 	<header>
 		<!-- navbar -->
 		<nav
@@ -116,13 +116,14 @@
 				<button class="btn btn-secondary col-4 opacity-75 mb-3 offset-4"
 						id="room-comment-btn" data-bs-toggle="collapse"
 						data-bs-target="#roomcomment">What Fans are saying</button>
-					<div class="card shadow-0 border opacity-75"
+					<div class="card shadow-0 border opacity-100"
 						style="background-color: #f0f2f5;" id="roomcomment">
 						<div class="card-body p-4 ">
 							<div class="form-outline mb-4">
 								<input type="text" id="addANote" class="form-control"
 									placeholder="Type comment..." /> <label class="form-label"
-									for="addANote">+ Add a note</label>
+									for="addANote"></label>
+								<button class="btn btn-secondary mt-2">Add comment</button>
 							</div>
 
 							<div class="card mb-4">
@@ -137,10 +138,9 @@
 											<p class="small mb-0 ms-2">Martha</p>
 										</div>
 										<div class="d-flex flex-row align-items-center">
-											<p class="small text-muted mb-0">Upvote?</p>
-											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
-												style="margin-top: -0.16rem;"></i>
-											<p class="small text-muted mb-0">3</p>
+											<button class="btn btn-secondary small mb-0 mx-2">Edit</button>
+											<button class="btn btn-secondary small mb-0 mx-2">Delete</button>
+											
 										</div>
 									</div>
 								</div>
@@ -158,10 +158,8 @@
 											<p class="small mb-0 ms-2">Johny</p>
 										</div>
 										<div class="d-flex flex-row align-items-center">
-											<p class="small text-muted mb-0">Upvote?</p>
-											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
-												style="margin-top: -0.16rem;"></i>
-											<p class="small text-muted mb-0">4</p>
+											<button class="btn btn-secondary small mb-0 mx-2">Edit</button>
+											<button class="btn btn-secondary small mb-0 mx-2">Delete</button>
 										</div>
 									</div>
 								</div>
