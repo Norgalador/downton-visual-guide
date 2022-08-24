@@ -1,6 +1,6 @@
 /* This css template used for dashboard.jsp */
 
-.body {
+.body, #roomtable, #room-table-btn {
 	font-family: 'Wire One', Helvetica, Arial, sans-serif;
     font-weight:normal;
 	font-size:2.5em;
@@ -76,7 +76,19 @@
 	margin-top: 125px;
 }
 
+#roomtable {
+	color: black;
+	font-size: 2rem;
+	margin-top: 50px;
+	
+} 
+
+#room-table-btn {
+	margin-top: 200px;
+}
+
 .toast {
 	margin-top: 200px;
 	
 }
+
