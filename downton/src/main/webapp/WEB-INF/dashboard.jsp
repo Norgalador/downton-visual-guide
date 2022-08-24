@@ -83,7 +83,6 @@
 								 
 							<tr>			
 								<td>${room.name}</td>
-						
 								<td><img style="height: 60px"src="${room.image}" ></td>
 
 							</tr>

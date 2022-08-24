@@ -102,6 +102,5 @@ public class Room {
 		this.name = name;
 		this.image = image;
 	}
-	
        
 }
