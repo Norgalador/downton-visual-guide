@@ -14,8 +14,8 @@ public class RoomService {
 	private RoomRepository roomRepo;
 	
 	//add a room
-	public void create(Room room) {
-		roomRepo.save(room);
+	public Room create(Room room) {
+		return roomRepo.save(room);
 	}
 	//get by id
 	public Room getOne(Long id) {
