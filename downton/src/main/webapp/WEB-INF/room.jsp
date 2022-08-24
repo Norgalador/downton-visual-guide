@@ -26,7 +26,8 @@
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
 			<div class="container">
-				<a class="navbar-brand" style="color: #00ff00;">Downton: A Visual Guide</a>
+				<a class="navbar-brand" style="color: black;">Downton: A Visual
+					Guide</a>
 				<!-- Downton Main Theme auto plays when site is loaded -->
 				<audio controls autoplay>
 					<source src="/media/DowntonAbbeyTheme.mp3" type="audio/mpeg" />
@@ -44,11 +45,12 @@
 
 						<!-- nav links -->
 						<ul class="navbar-nav me-auto offset-1">
-							<li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="#!">Wiki</a></li>
-							<li class="nav-item"><a class="nav-link" id="myBtn"
-								href="#!">About</a></li>
+							<li class="nav-item"><a class="nav-link"
+								style="color: #D9DAD8;" href="/logout">Logout</a></li>
+							<li class="nav-item"><a class="nav-link"
+								style="color: #D9DAD8;" href="#!">Wiki</a></li>
+							<li class="nav-item"><a class="nav-link"
+								style="color: #D9DAD8;" id="myBtn" href="#!">About</a></li>
 						</ul>
 					</div>
 				</div>
@@ -60,6 +62,33 @@
 		<div class="bg-image vh-100 mask">
 			<div class="mask"
 				style="background-color: rgba(250, 182, 162, 0.15);"></div>
+
+			<!-- Dropdown room info section -->
+			<div class="container">
+				<div class="d-flex justify-content-center align-items-center row"
+					id="room-table">
+
+					<button class="btn btn-secondary col-4 opacity-75 mb-3"
+						id="room-info-btn" data-bs-toggle="collapse"
+						data-bs-target="#roominfo">Learn about the Kitchen</button>
+
+					<div class="collapse card card-body opacity-75 mb-3" id="roominfo">
+						<div class="card-body">
+							<p>Full of pots, pans and kettles and much more kitchen
+								paraphernalia, the kitchen that sits below stairs in the
+								Servants' quarters of Downton Abbey is presided over by Mrs.
+								Patmore and Daisy Mason. The kitchen is not only where the
+								preparation of food take place, but the place the Kitchen staff
+								spend most of their time including having their meals in there
+								unlike the other servants who sat at the table in the Servants'
+								Hall. The kitchen's centre piece is a large table in which food
+								is prepared upon.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end room info section  -->
+
 			<!-- About section toast (pop-up) -->
 			<!-- Flexbox container for aligning the toast -->
 			<div aria-live="polite" aria-atomic="true"
@@ -80,6 +109,70 @@
 				</div>
 			</div>
 			<!-- End custom toast (pop-up) -->
+
+			<!-- Comments section -->
+			<div class="row d-flex justify-content-center mt-5">
+				<div class="col-md-8 col-lg-6">
+				<button class="btn btn-secondary col-4 opacity-75 mb-3 offset-4"
+						id="room-comment-btn" data-bs-toggle="collapse"
+						data-bs-target="#roomcomment">What Fans are saying</button>
+					<div class="card shadow-0 border opacity-75"
+						style="background-color: #f0f2f5;" id="roomcomment">
+						<div class="card-body p-4 ">
+							<div class="form-outline mb-4">
+								<input type="text" id="addANote" class="form-control"
+									placeholder="Type comment..." /> <label class="form-label"
+									for="addANote">+ Add a note</label>
+							</div>
+
+							<div class="card mb-4">
+								<div class="card-body">
+									<p>Type your note, and hit enter to add it</p>
+
+									<div class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center">
+											<img
+												src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+												alt="avatar" width="25" height="25" />
+											<p class="small mb-0 ms-2">Martha</p>
+										</div>
+										<div class="d-flex flex-row align-items-center">
+											<p class="small text-muted mb-0">Upvote?</p>
+											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
+												style="margin-top: -0.16rem;"></i>
+											<p class="small text-muted mb-0">3</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="card mb-4">
+								<div class="card-body">
+									<p>Type your note, and hit enter to add it</p>
+
+									<div class="d-flex justify-content-between">
+										<div class="d-flex flex-row align-items-center">
+											<img
+												src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp"
+												alt="avatar" width="25" height="25" />
+											<p class="small mb-0 ms-2">Johny</p>
+										</div>
+										<div class="d-flex flex-row align-items-center">
+											<p class="small text-muted mb-0">Upvote?</p>
+											<i class="far fa-thumbs-up mx-2 fa-xs text-black"
+												style="margin-top: -0.16rem;"></i>
+											<p class="small text-muted mb-0">4</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End comments section -->
 		</div>
 	</section>
 
