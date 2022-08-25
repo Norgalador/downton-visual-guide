@@ -126,22 +126,26 @@
 							<form:input type="text" class="form-control" id="floatingEmail"
 								placeholder="username" path="name" />
 							<form:label path="name">Username</form:label>
+							<form:errors class='text-danger' path="name" />
 						</div>
 						<div class="form-floating mb-3 p-2">
 							<form:input type="email" class="form-control" id="floatingEmail"
 								placeholder="name@example.com" path="email" />
 							<form:label path="email">Email address</form:label>
+							<form:errors class='text-danger' path="email" />
 						</div>
 						<div class="form-floating mb-3 p-2">
 							<form:input type="password" class="form-control"
 								id="floatingPassword" placeholder="Password" path="password" />
 							<form:label path="password">Password</form:label>
+							<form:errors class='text-danger' path="password" />
 						</div>
 						<div class="form-floating mb-3 p-2">
 							<form:input type="password" class="form-control"
 								id="floatingPasswordConfirm" placeholder="Confirm Password"
 								path="confirm" />
 							<form:label path="confirm">Confirm Password</form:label>
+							<form:errors class='text-danger' path="confirm" />
 						</div>
 						<button type="submit" class="btn btn-secondary btn-lg mt-3">Register</button>
 					</form:form>
