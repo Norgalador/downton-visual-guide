@@ -29,13 +29,21 @@ public class CommentController {
 	
 		// Add a comment
 		
-		@PostMapping("/addcomment")
-		public String create(HttpSession session, Model model, @Valid @ModelAttribute("comments") Comment comment, BindingResult result) {
+		@PostMapping("/addcomment/room4")
+		public String create4(HttpSession session, Model model, @Valid @ModelAttribute("comments") Comment comment, BindingResult result) {
 			if (result.hasErrors()) {
 				return "room.jsp";
 		    }
 					comments.create(comment);
 		            return "redirect:/room/4";   
+		}
+		@PostMapping("/addcomment/room1")
+		public String create1(HttpSession session, Model model, @Valid @ModelAttribute("comments") Comment comment, BindingResult result) {
+			if (result.hasErrors()) {
+				return "room.jsp";
+		    }
+					comments.create(comment);
+		            return "redirect:/room/1";   
 		}
 		
 		// Edit a comment (rough idea)

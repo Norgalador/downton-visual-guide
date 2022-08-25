@@ -50,7 +50,7 @@ public class RoomController {
 		model.addAttribute("user", user);
 		model.addAttribute("room", rooms.getOne(id));
 		model.addAttribute("allComments", comments.all());
-		return "room.jsp"; //library.jsp
+		return "room.jsp"; //kitchen.jsp
 	}
 	
 //	@GetMapping("/room/2")
@@ -69,13 +69,15 @@ public class RoomController {
 //		return "room.jsp"; //diningroom.jsp
 //	}
 //	
-//	@GetMapping("/room/1")
-//	public String viewLibrary(@PathVariable Long id, Model model, @ModelAttribute("newComment") Comment comment, Room room) {
-//		model.addAttribute("room", rooms.getOne(id));
-//		model.addAttribute("newComment", comments.create(comment));
-//		model.addAttribute("allComments", comments.all());
-//		return "room.jsp"; //kitchen.jsp
-//	}
+	@GetMapping("/room/1")
+	public String viewLibrary(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, Room room) {
+		Long id = (long) 1;
+		User user = users.findById((Long)session.getAttribute("loggedUser"));
+		model.addAttribute("user", user);
+		model.addAttribute("room", rooms.getOne(id));
+		model.addAttribute("allComments", comments.all());
+		return "library.jsp"; 
+	}
 	
 	@PutMapping("/room/update/{id}")
 	public String updateRoom(@PathVariable Long id, @Valid @ModelAttribute("editRoom") Room room) {
