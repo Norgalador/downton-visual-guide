@@ -53,22 +53,26 @@ public class RoomController {
 		return "room.jsp"; //kitchen.jsp
 	}
 	
-//	@GetMapping("/room/2")
-//	public String viewGreatHall( Model model, @ModelAttribute("newComment") Comment comment, Room room) {
-//		model.addAttribute("room", rooms.getOne(id));
-//		model.addAttribute("newComment", comments.create(comment));
-//		model.addAttribute("allComments", comments.all());
-//		return "room.jsp"; //greathall.jsp
-//	}
-//	
-//	@GetMapping("/room/3")
-//	public String viewDiningRoom(@PathVariable Long id, Model model, @ModelAttribute("newComment") Comment comment, Room room) {
-//		model.addAttribute("room", rooms.getOne(id));
-//		model.addAttribute("newComment", comments.create(comment));
-//		model.addAttribute("allComments", comments.all());
-//		return "room.jsp"; //diningroom.jsp
-//	}
-//	
+	@GetMapping("/room/2")
+	public String viewGreatHall(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, Room room) {
+		Long id = (long) 2;
+		User user = users.findById((Long)session.getAttribute("loggedUser"));
+		model.addAttribute("user", user);
+		model.addAttribute("room", rooms.getOne(id));
+		model.addAttribute("allComments", comments.all());
+		return "greathall.jsp";
+	}
+	
+	@GetMapping("/room/3")
+	public String viewDiningRoom(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, Room room) {
+		Long id = (long) 3;
+		User user = users.findById((Long)session.getAttribute("loggedUser"));
+		model.addAttribute("user", user);
+		model.addAttribute("room", rooms.getOne(id));
+		model.addAttribute("allComments", comments.all());
+		return "diningroom.jsp"; 
+	}
+	
 	@GetMapping("/room/1")
 	public String viewLibrary(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, Room room) {
 		Long id = (long) 1;
