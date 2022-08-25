@@ -62,7 +62,7 @@ public class CommentController {
 		// Delete a comment
 		
 		@RequestMapping(value="/delete/{id}")
-		public String destroy(@PathVariable("id") Long id, HttpSession session, User user) {
+		public String destroy4(@PathVariable("id") Long id, HttpSession session, User user) {
 			if (session.getAttribute("loggedUser") == null) {
 				return "redirect:/logout";
 				}
@@ -73,6 +73,19 @@ public class CommentController {
 			System.out.println(session.getAttribute("loggedUser"));
 			System.out.println(comments.getOne(id).getUser());
 				return "redirect:/room/4";
+		}
+		@RequestMapping(value="/delete/room1/{id}")
+		public String destroy1(@PathVariable("id") Long id, HttpSession session, User user) {
+			if (session.getAttribute("loggedUser") == null) {
+				return "redirect:/logout";
+				}
+			else if ((session.getAttribute("loggedUser")).equals(comments.getOne(id).getUser().getId())) { 
+					comments.delete(id);
+					return "redirect:/room/1";
+				}
+			System.out.println(session.getAttribute("loggedUser"));
+			System.out.println(comments.getOne(id).getUser());
+				return "redirect:/room/1";
 		}
 		
 		
