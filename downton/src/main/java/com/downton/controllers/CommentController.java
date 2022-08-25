@@ -20,7 +20,6 @@ import com.downton.models.User;
 import com.downton.services.CommentService;
 import com.downton.services.RoomService;
 import com.downton.services.UserService;
-import com.gmprojects.vinylchum.models.Vinyl;
 
 @Controller
 public class CommentController {
