@@ -82,7 +82,7 @@
 							<c:forEach items="${rooms}" var="room">
 								 
 							<tr>			
-								<td>${room.name}</td>
+								<td><a href="/room/${room.id}">${room.name}</a></td>
 								<td><img style="height: 60px"src="${room.image}" ></td>
 
 							</tr>

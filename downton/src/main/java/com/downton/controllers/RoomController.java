@@ -35,13 +35,37 @@ public class RoomController {
 		}
 	}
 	
-	@GetMapping("/room/{id}")
-	public String viewRoom(@PathVariable Long id, Model model, @ModelAttribute("newComment") Comment comment, Room room) {
-		model.addAttribute("room", rooms.getOne(id));
+	@GetMapping("/room/4")
+	public String viewKitchen(Model model, @ModelAttribute("newComment") Comment comment, Room room) {
+//		model.addAttribute("room", rooms.getOne(id));
 		model.addAttribute("newComment", comments.create(comment));
 		model.addAttribute("allComments", comments.all());
-		return "room.jsp";
+		return "room.jsp"; //library.jsp
 	}
+	
+//	@GetMapping("/room/2")
+//	public String viewGreatHall( Model model, @ModelAttribute("newComment") Comment comment, Room room) {
+//		model.addAttribute("room", rooms.getOne(id));
+//		model.addAttribute("newComment", comments.create(comment));
+//		model.addAttribute("allComments", comments.all());
+//		return "room.jsp"; //greathall.jsp
+//	}
+//	
+//	@GetMapping("/room/3")
+//	public String viewDiningRoom(@PathVariable Long id, Model model, @ModelAttribute("newComment") Comment comment, Room room) {
+//		model.addAttribute("room", rooms.getOne(id));
+//		model.addAttribute("newComment", comments.create(comment));
+//		model.addAttribute("allComments", comments.all());
+//		return "room.jsp"; //diningroom.jsp
+//	}
+//	
+//	@GetMapping("/room/1")
+//	public String viewLibrary(@PathVariable Long id, Model model, @ModelAttribute("newComment") Comment comment, Room room) {
+//		model.addAttribute("room", rooms.getOne(id));
+//		model.addAttribute("newComment", comments.create(comment));
+//		model.addAttribute("allComments", comments.all());
+//		return "room.jsp"; //kitchen.jsp
+//	}
 	
 	@PutMapping("/room/update/{id}")
 	public String updateRoom(@PathVariable Long id, @Valid @ModelAttribute("editRoom") Room room) {
