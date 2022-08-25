@@ -1,5 +1,6 @@
 package com.downton.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,20 @@ import com.downton.models.Comment;
 import com.downton.models.Room;
 import com.downton.services.CommentService;
 import com.downton.services.RoomService;
+import com.downton.services.UserService;
+import com.downton.models.User;
 
 @Controller
 public class RoomController {
+	
 	@Autowired
 	private RoomService rooms;
+	
 	@Autowired
 	private CommentService comments;
+	
+	@Autowired
+	private UserService users;
 	
 	@PostMapping("/room/create")
 	public String createRoom(@Valid @ModelAttribute("newRoom") Room room, BindingResult result) {
@@ -36,9 +44,11 @@ public class RoomController {
 	}
 	
 	@GetMapping("/room/4")
-	public String viewKitchen(Model model, @ModelAttribute("newComment") Comment comment, Room room) {
-//		model.addAttribute("room", rooms.getOne(id));
-		model.addAttribute("newComment", comments.create(comment));
+	public String viewKitchen(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, Room room) {
+		Long id = (long) 4;
+		User user = users.findById((Long)session.getAttribute("loggedUser"));
+		model.addAttribute("user", user);
+		model.addAttribute("room", rooms.getOne(id));
 		model.addAttribute("allComments", comments.all());
 		return "room.jsp"; //library.jsp
 	}

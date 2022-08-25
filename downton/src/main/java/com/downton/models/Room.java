@@ -22,11 +22,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name="rooms")
 public class Room {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty(message="What is the name of the room?")
+//	@NotEmpty(message="What is the name of the room?")
 	private String name;
 	
 	private String image;
