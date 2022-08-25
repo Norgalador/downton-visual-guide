@@ -129,7 +129,7 @@
 							<form:errors class='text-danger' path="name" />
 						</div>
 						<div class="form-floating mb-3 p-2">
-							<form:input type="email" class="form-control" id="floatingEmail"
+							<form:input type="text" class="form-control" id="floatingEmail"
 								placeholder="name@example.com" path="email" />
 							<form:label path="email">Email address</form:label>
 							<form:errors class='text-danger' path="email" />

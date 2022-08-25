@@ -46,6 +46,25 @@ public class CommentController {
 		            return "redirect:/room/1";   
 		}
 		
+		@PostMapping("/addcomment/room2")
+		public String create2(HttpSession session, Model model, @Valid @ModelAttribute("comments") Comment comment, BindingResult result) {
+			if (result.hasErrors()) {
+				return "room.jsp";
+		    }
+					comments.create(comment);
+		            return "redirect:/room/2";   
+		}
+		
+		@PostMapping("/addcomment/room3")
+		public String create3(HttpSession session, Model model, @Valid @ModelAttribute("comments") Comment comment, BindingResult result) {
+			if (result.hasErrors()) {
+				return "room.jsp";
+		    }
+					comments.create(comment);
+		            return "redirect:/room/3";   
+		}
+		
+		
 		// Edit a comment (rough idea)
 
 		@PutMapping("/edit/{id}")
@@ -74,6 +93,7 @@ public class CommentController {
 			System.out.println(comments.getOne(id).getUser());
 				return "redirect:/room/4";
 		}
+		
 		@RequestMapping(value="/delete/room1/{id}")
 		public String destroy1(@PathVariable("id") Long id, HttpSession session, User user) {
 			if (session.getAttribute("loggedUser") == null) {
@@ -87,6 +107,35 @@ public class CommentController {
 			System.out.println(comments.getOne(id).getUser());
 				return "redirect:/room/1";
 		}
+		
+		@RequestMapping(value="/delete/room2/{id}")
+		public String destroy2(@PathVariable("id") Long id, HttpSession session, User user) {
+			if (session.getAttribute("loggedUser") == null) {
+				return "redirect:/logout";
+				}
+			else if ((session.getAttribute("loggedUser")).equals(comments.getOne(id).getUser().getId())) { 
+					comments.delete(id);
+					return "redirect:/room/2";
+				}
+			System.out.println(session.getAttribute("loggedUser"));
+			System.out.println(comments.getOne(id).getUser());
+				return "redirect:/room/2";
+		}
+
+		@RequestMapping(value="/delete/room3/{id}")
+		public String destroy3(@PathVariable("id") Long id, HttpSession session, User user) {
+			if (session.getAttribute("loggedUser") == null) {
+				return "redirect:/logout";
+				}
+			else if ((session.getAttribute("loggedUser")).equals(comments.getOne(id).getUser().getId())) { 
+					comments.delete(id);
+					return "redirect:/room/3";
+				}
+			System.out.println(session.getAttribute("loggedUser"));
+			System.out.println(comments.getOne(id).getUser());
+				return "redirect:/room/3";
+		}
+		
 		
 		
 		

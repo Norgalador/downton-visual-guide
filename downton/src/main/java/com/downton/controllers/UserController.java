@@ -89,14 +89,7 @@ public String register(Model model) {
 @PostMapping("/register")
 public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser loginUser) {
 
-//	users.validate(user, result);
-//	System.out.println("1");
-//	System.out.println(user);
-//	System.out.println(result);
-//	if(result.hasErrors()) {
-//	    return "index.jsp";
-//}
-	//validate user
+
 			users.validate(user, result);
 				if(result.hasErrors()) {
 					List<FieldError> fieldErrors = result.getFieldErrors();
@@ -104,7 +97,7 @@ public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingR
 						System.out.print(error.getDefaultMessage());
 					}
 					System.out.println();
-					return "index.jsp";
+					return "register.jsp";
 				}
 
 	users.registerUser(user);
