@@ -89,7 +89,8 @@ public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingR
 	System.out.println(user);
 	System.out.println(result);
 	if(result.hasErrors()) {
-	    return "index.jsp";
+//	    return "index.jsp";
+		return "register.jsp";
 }
 	users.registerUser(user);
 	session.setAttribute("loggedUser", user.getId());
