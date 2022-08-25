@@ -59,7 +59,7 @@
 		<!-- End navbar -->
 	</header>
 	<section>
-		<div class="bg-image1 vh-100 mask">
+		<div class="bg-image vh-100 mask">
 			<div class="mask"
 				style="background-color: rgba(250, 182, 162, 0.15);"></div>
 
@@ -70,16 +70,19 @@
 
 					<button class="btn btn-secondary col-4 opacity-75 mb-3"
 						id="room-info-btn" data-bs-toggle="collapse"
-						data-bs-target="#roominfo">Learn about the Library</button>
+						data-bs-target="#roominfo">Learn about the Kitchen</button>
 
 					<div class="collapse card card-body opacity-75 mb-3" id="roominfo">
 						<div class="card-body">
-							<p>The Library is one of the main rooms of Downton Abbey on the ground floor.
-							 The room has a collection of thousands of books and has its own librarian. 
-							 The Library is also where Lord Grantham spends much of his time writing 
-							 letters at his desk whilst Lady Grantham and the other family members
-							  may sit opposite one another on the red sofas that face each other on 
-							  either side of the fireplace.</p>
+							<p>Full of pots, pans and kettles and much more kitchen
+								paraphernalia, the kitchen that sits below stairs in the
+								Servants' quarters of Downton Abbey is presided over by Mrs.
+								Patmore and Daisy Mason. The kitchen is not only where the
+								preparation of food take place, but the place the Kitchen staff
+								spend most of their time including having their meals in there
+								unlike the other servants who sat at the table in the Servants'
+								Hall. The kitchen's centre piece is a large table in which food
+								is prepared upon.</p>
 						</div>
 					</div>
 				</div>
@@ -117,7 +120,7 @@
 						style="background-color: #f0f2f5;" id="roomcomment">
 						<div class="card-body p-4 ">
 							<div class="form-outline mb-4">
-							<form:form action="/addcomment/room1" modelAttribute="comments" class="form" method="post">
+							<form:form action="/addcomment/room4" modelAttribute="comments" class="form" method="post">
 								<form:input path="comment" type="text" id="addANote" class="form-control"
 									placeholder="Type comment..." /> <label class="form-label"
 									for="addANote"></label>
@@ -138,8 +141,8 @@
 												<p class="small mb-0 ms-2"><c:out value="${comment.user.name}"/></p>
 											</div>
 											<div class="d-flex flex-row align-items-center">
-													<button onclick="window.location.href='/edit/room1/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Edit</button>
-													<button onclick="window.location.href='/delete/room1/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Delete</button>
+													<button onclick="window.location.href='/edit/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Edit</button>
+													<button onclick="window.location.href='/delete/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Delete</button>
 											</div>
 										</div>
 									</div>
