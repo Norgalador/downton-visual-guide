@@ -88,6 +88,7 @@ public String register(Model model) {
 
 @PostMapping("/register")
 public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser loginUser) {
+
 //	users.validate(user, result);
 //	System.out.println("1");
 //	System.out.println(user);
@@ -105,6 +106,7 @@ public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingR
 					System.out.println();
 					return "index.jsp";
 				}
+
 	users.registerUser(user);
 	session.setAttribute("loggedUser", user.getId());
 	return "redirect:/dashboard";
