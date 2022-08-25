@@ -67,8 +67,8 @@ public class CommentController {
 		
 		// Edit a comment (rough idea)
 
-		@PutMapping("/edit/{id}")
-		public String update(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+		@PutMapping("/edit/room4/{id}")
+		public String update4(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
 			if (session.getAttribute("loggedUser") == null) {
 				return "redirect:/logout";
 				} else if (result.hasErrors()) {
@@ -76,6 +76,38 @@ public class CommentController {
 			}
 			comments.update(comment);
 			return "redirect:/room/4";
+		}
+		
+		@PutMapping("/edit/room3/{id}")
+		public String update3(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+			if (session.getAttribute("loggedUser") == null) {
+				return "redirect:/logout";
+				} else if (result.hasErrors()) {
+				return "diningroom.jsp";
+			}
+			comments.update(comment);
+			return "redirect:/room/3";
+		}
+		
+		@PutMapping("/edit/room2/{id}")
+		public String update2(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+			if (session.getAttribute("loggedUser") == null) {
+				return "redirect:/logout";
+				} else if (result.hasErrors()) {
+				return "greathall.jsp";
+			}
+			comments.update(comment);
+			return "redirect:/room/2";
+		}
+		@PutMapping("/edit/room1/{id}")
+		public String update1(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+			if (session.getAttribute("loggedUser") == null) {
+				return "redirect:/logout";
+				} else if (result.hasErrors()) {
+				return "library.jsp";
+			}
+			comments.update(comment);
+			return "redirect:/room/1";
 		}
 		
 		// Delete a comment
