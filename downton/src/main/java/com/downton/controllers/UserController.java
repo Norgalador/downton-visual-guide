@@ -1,5 +1,7 @@
 package com.downton.controllers;
 
+import java.util.List;
+
 // IMPORTS
 
 import javax.servlet.http.HttpSession;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -56,8 +59,9 @@ public String cancel(Model model) {
 public String loginUser(@Valid @ModelAttribute("newLogin") LoginUser loginUser, BindingResult result, HttpSession session, @ModelAttribute("newUser") User user) {
 	users.authenticateUser(loginUser, result);
 	if(result.hasErrors()) {
-		return "index.jsp";
+		return "register.jsp";
 	}
+	
 	User loggedUser=users.findByEmail(loginUser.getEmail());
 	session.setAttribute("loggedUser", loggedUser.getId());
 	return "redirect:/dashboard";
@@ -84,13 +88,23 @@ public String register(Model model) {
 
 @PostMapping("/register")
 public String registerUser(@Valid @ModelAttribute("newUser") User user, BindingResult result, HttpSession session, @ModelAttribute("newLogin") LoginUser loginUser) {
-	users.validate(user, result);
-	System.out.println("1");
-	System.out.println(user);
-	System.out.println(result);
-	if(result.hasErrors()) {
-	    return "index.jsp";
-}
+//	users.validate(user, result);
+//	System.out.println("1");
+//	System.out.println(user);
+//	System.out.println(result);
+//	if(result.hasErrors()) {
+//	    return "index.jsp";
+//}
+	//validate user
+			users.validate(user, result);
+				if(result.hasErrors()) {
+					List<FieldError> fieldErrors = result.getFieldErrors();
+					for(FieldError error : fieldErrors) {
+						System.out.print(error.getDefaultMessage());
+					}
+					System.out.println();
+					return "index.jsp";
+				}
 	users.registerUser(user);
 	session.setAttribute("loggedUser", user.getId());
 	return "redirect:/dashboard";
