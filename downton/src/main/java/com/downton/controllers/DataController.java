@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.downton.models.Room;
 import com.downton.models.Character;
 import com.downton.services.CharacterService;
+import com.downton.services.CommentService;
 import com.downton.services.RoomService;
 
 @RequestMapping("/api")
@@ -27,6 +28,8 @@ public class DataController {
 	private RoomService rooms;
 	@Autowired
 	private CharacterService characters;
+	@Autowired
+	private CommentService comments;
 	
 	@PostMapping("/rooms/create")
 	public Room createRooms(@Valid @RequestParam(value="name")String name, @RequestParam(value="image", required=false)  String image) {

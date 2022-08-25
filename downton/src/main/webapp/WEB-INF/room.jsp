@@ -120,32 +120,35 @@
 						style="background-color: #f0f2f5;" id="roomcomment">
 						<div class="card-body p-4 ">
 							<div class="form-outline mb-4">
-								<input type="text" id="addANote" class="form-control"
+							<form:form action="/addcomment" modelAttribute="comments" class="form" method="post">
+								<form:input path="comment" type="text" id="addANote" class="form-control"
 									placeholder="Type comment..." /> <label class="form-label"
 									for="addANote"></label>
-								<button class="btn btn-secondary mt-2">Add comment</button>
+									<form:input type="hidden" path="user" value="${user.id}"/>
+									<form:input type="hidden" path="room" value="${room.id}"/>
+								<button type="submit" class="btn btn-secondary mt-2">Add comment</button>
+							</form:form>
 							</div>
-
-							<div class="card mb-4">
-								<div class="card-body">
-									<p>Type your note, and hit enter to add it</p>
-
-									<div class="d-flex justify-content-between">
-										<div class="d-flex flex-row align-items-center">
-											<img
-												src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
-												alt="avatar" width="25" height="25" />
-											<p class="small mb-0 ms-2">Martha</p>
-										</div>
-										<div class="d-flex flex-row align-items-center">
-											<button class="btn btn-secondary small mb-0 mx-2">Edit</button>
-											<button class="btn btn-secondary small mb-0 mx-2">Delete</button>
-											
+							<c:forEach var="comment" items="${room.comments}">
+								<div class="card mb-4">
+									<div class="card-body">
+										<p><c:out value="${comment.comment}"/></p>
+										<div class="d-flex justify-content-between">
+											<div class="d-flex flex-row align-items-center">
+												<img
+													src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp"
+													alt="avatar" width="25" height="25" />
+												<p class="small mb-0 ms-2"><c:out value="${comment.user.name}"/></p>
+											</div>
+											<div class="d-flex flex-row align-items-center">
+													<button onclick="window.location.href='/edit/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Edit</button>
+													<button onclick="window.location.href='/delete/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Delete</button>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-
+							</c:forEach>
+							
 							<div class="card mb-4">
 								<div class="card-body">
 									<p>Type your note, and hit enter to add it</p>
@@ -158,13 +161,12 @@
 											<p class="small mb-0 ms-2">Johny</p>
 										</div>
 										<div class="d-flex flex-row align-items-center">
-											<button class="btn btn-secondary small mb-0 mx-2">Edit</button>
-											<button class="btn btn-secondary small mb-0 mx-2">Delete</button>
+												<button onclick="window.location.href='/edit/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Edit</button>
+												<button onclick="window.location.href='/delete/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Delete</button>
 										</div>
 									</div>
 								</div>
 							</div>
-
 							
 						</div>
 					</div>
