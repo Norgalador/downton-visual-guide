@@ -77,11 +77,12 @@ public class CommentController {
 			if(session.getAttribute("loggedInUser")!= null) {
 				return "dashboard.jsp";
 			}
-			else {
+			else if ((session.getAttribute("loggedUser")).equals(comments.getOne(id).getUser().getId())) {
 				Comment editComment = comments.getOne(id);
 				model.addAttribute("editComment", editComment);
 				return "edit.jsp";
-			}
+			} 
+			return "redirect:/room/1";
 		}
 
 		@PutMapping("/edit/room4/{id}")
@@ -125,7 +126,7 @@ public class CommentController {
 			}
 			comments.update(comment);
 
-			return "redirect/room/1";
+			return "redirect:/room/1";
 		}
 		
 		// Delete a comment
