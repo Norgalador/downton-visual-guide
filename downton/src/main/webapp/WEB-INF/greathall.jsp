@@ -122,7 +122,7 @@
 						style="background-color: #f0f2f5;" id="roomcomment">
 						<div class="card-body p-4 ">
 							<div class="form-outline mb-4">
-								<form:form action="/addcomment/room1" modelAttribute="comments"
+								<form:form action="/addcomment/room2" modelAttribute="comments"
 									class="form" method="post">
 									<form:input path="comment" type="text" id="addANote"
 										class="form-control" placeholder="Type comment..." />
@@ -153,7 +153,7 @@
 													onclick="window.location.href='/edit/${comment.id}';"
 													class="btn btn-secondary small mb-0 mx-2">Edit</button>
 												<button
-													onclick="window.location.href='/delete/room1/${comment.id}';"
+													onclick="window.location.href='/delete/room2/${comment.id}';"
 													class="btn btn-secondary small mb-0 mx-2">Delete</button>
 											</div>
 										</div>

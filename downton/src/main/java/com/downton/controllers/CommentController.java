@@ -27,6 +27,12 @@ public class CommentController {
 	@Autowired
 	private CommentService comments;
 	
+	@Autowired
+	private UserService users;
+	
+	@Autowired
+	private RoomService rooms;
+	
 		// Add a comment
 		
 		@PostMapping("/addcomment/room4")
@@ -66,6 +72,17 @@ public class CommentController {
 		
 		
 		// Edit a comment (rough idea)
+		@GetMapping("/comment/edit/{id}")
+		public String editComment4(@PathVariable Long id, HttpSession session, @ModelAttribute("editComment") Comment comment, Model model) {
+			if(session.getAttribute("loggedInUser")!= null) {
+				return "dashboard.jsp";
+			}
+			else {
+				Comment editComment = comments.getOne(id);
+				model.addAttribute("editComment", editComment);
+				return "edit.jsp";
+			}
+		}
 
 		@PutMapping("/edit/room4/{id}")
 		public String update4(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
@@ -107,7 +124,8 @@ public class CommentController {
 				return "library.jsp";
 			}
 			comments.update(comment);
-			return "redirect:/room/1";
+
+			return "redirect/room/1";
 		}
 		
 		// Delete a comment
