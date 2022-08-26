@@ -161,7 +161,7 @@
 											<p class="small mb-0 ms-2">Johny</p>
 										</div>
 										<div class="d-flex flex-row align-items-center">
-												<button onclick="window.location.href='/edit/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Edit</button>
+												<button onclick="window.location.href='comment/edit/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Edit</button>
 												<button onclick="window.location.href='/delete/${comment.id}';" class="btn btn-secondary small mb-0 mx-2">Delete</button>
 										</div>
 									</div>

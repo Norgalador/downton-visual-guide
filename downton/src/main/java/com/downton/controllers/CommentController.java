@@ -72,7 +72,7 @@ public class CommentController {
 		
 		
 		// Edit a comment (rough idea)
-		@GetMapping("/comment/edit/{id}")
+		@GetMapping("/comment/edit/{id}")  //done
 		public String editComment4(@PathVariable Long id, HttpSession session, @ModelAttribute("editComment") Comment comment, Model model) {
 			if(session.getAttribute("loggedInUser")!= null) {
 				return "dashboard.jsp";
@@ -84,40 +84,52 @@ public class CommentController {
 			} 
 			return "redirect:/room/1";
 		}
-
-		@PutMapping("/edit/room4/{id}")
-		public String update4(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
-			if (session.getAttribute("loggedUser") == null) {
-				return "redirect:/logout";
-				} else if (result.hasErrors()) {
-				return "room.jsp";
-			}
-			comments.update(comment);
-			return "redirect:/room/4";
-		}
-		
-		@PutMapping("/edit/room3/{id}")
-		public String update3(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
-			if (session.getAttribute("loggedUser") == null) {
-				return "redirect:/logout";
-				} else if (result.hasErrors()) {
-				return "diningroom.jsp";
-			}
-			comments.update(comment);
-			return "redirect:/room/3";
-		}
-		
-		@PutMapping("/edit/room2/{id}")
-		public String update2(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
-			if (session.getAttribute("loggedUser") == null) {
-				return "redirect:/logout";
-				} else if (result.hasErrors()) {
-				return "greathall.jsp";
-			}
-			comments.update(comment);
-			return "redirect:/room/2";
-		}
-		@PutMapping("/edit/room1/{id}")
+//		@GetMapping("/comment3/edit/{id}")
+//		public String editComment3(@PathVariable Long id, HttpSession session, @ModelAttribute("editComment") Comment comment, Model model) {
+//			if(session.getAttribute("loggedInUser")!= null) {
+//				return "dashboard.jsp";
+//			}
+//			else if ((session.getAttribute("loggedUser")).equals(comments.getOne(id).getUser().getId())) {
+//				Comment editComment = comments.getOne(id);
+//				model.addAttribute("editComment", editComment);
+//				return "edit.jsp";
+//			} 
+//			return "redirect:/room/3";
+////		}
+//
+//		@PutMapping("/edit/room4/{id}")
+//		public String update4(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+//			if (session.getAttribute("loggedUser") == null) {
+//				return "redirect:/logout";
+//				} else if (result.hasErrors()) {
+//				return "room.jsp";
+//			}
+//			comments.update(comment);
+//			return "redirect:/room/4";
+//		}
+//		
+//		@PutMapping("/edit/room3/{id}")
+//		public String update3(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+//			if (session.getAttribute("loggedUser") == null) {
+//				return "redirect:/logout";
+//				} else if (result.hasErrors()) {
+//				return "diningroom.jsp";
+//			}
+//			comments.update(comment);
+//			return "redirect:/room/3";
+//		}
+//		
+//		@PutMapping("/edit/room2/{id}")
+//		public String update2(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
+//			if (session.getAttribute("loggedUser") == null) {
+//				return "redirect:/logout";
+//				} else if (result.hasErrors()) {
+//				return "greathall.jsp";
+//			}
+//			comments.update(comment);
+//			return "redirect:/room/2";
+//		}
+		@PutMapping("/edit/comment/{id}") //done
 		public String update1(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
 			if (session.getAttribute("loggedUser") == null) {
 				return "redirect:/logout";
@@ -126,7 +138,7 @@ public class CommentController {
 			}
 			comments.update(comment);
 
-			return "redirect:/room/1";
+			return "redirect:/room/" + comment.getRoom().getId();
 		}
 		
 		// Delete a comment

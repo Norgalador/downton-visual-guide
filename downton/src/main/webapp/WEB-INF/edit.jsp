@@ -96,7 +96,7 @@
 						style="background-color: #f0f2f5;" id="roomcomment">
 						<div class="card-body p-4 ">
 							<div class="form-outline mb-4">
-							<form:form action="/edit/room1/${editComment.id }" modelAttribute="editComment" class="form" method="put">
+							<form:form action="/edit/comment/${editComment.id }" modelAttribute="editComment" class="form" method="put">
 								<form:input path="comment" type="text" id="addANote" class="form-control"
 									placeholder="Type comment..." /> <label class="form-label"
 									for="addANote"></label>
