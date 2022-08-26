@@ -150,7 +150,7 @@
 											</div>
 											<div class="d-flex flex-row align-items-center">
 												<button
-													onclick="window.location.href='/edit/${comment.id}';"
+													onclick="window.location.href='/comment/edit/${comment.id}';"
 													class="btn btn-secondary small mb-0 mx-2">Edit</button>
 												<button
 													onclick="window.location.href='/delete/room2/${comment.id}';"
