@@ -24,10 +24,12 @@
 <body>
 	<t:navbar></t:navbar>
 	<section>
-		<div class="bg-image vh-100 mask">
-			<div class="mask"
-				style="background-color: rgba(250, 182, 162, 0.15);"></div>
-
+		<img class="bg-image" src="/media/entirecast.webp">
+		<div class="vh-100 mask">
+			<div class="mask"></div>
+			
+			<t:aboutPopup></t:aboutPopup>
+			
 			<!-- Dropdown table for the rooms -->
 			<div class="container">
 				<div class="d-flex justify-content-center align-items-center row"
@@ -35,7 +37,7 @@
 
 					<button class="btn btn-secondary col-4" id="room-table-btn"
 						data-bs-toggle="collapse" data-bs-target="#roomtable">Discover
-						Downton Estate</button>
+						Downton</button>
 
 					<div class="collapse card card-body opacity-75" id="roomtable">
 						<table>
@@ -60,7 +62,7 @@
 
 			<!-- End dropdown table -->
 
-			<t:aboutPopup></t:aboutPopup>
+			
 			
 		</div>
 	</section>
