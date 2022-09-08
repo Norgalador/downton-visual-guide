@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -44,8 +45,16 @@
 
 						<!-- nav links -->
 						<ul class="navbar-nav me-auto">
-							<li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
+							<c:choose>
+								<c:when test="${loggedUser != null}">
+								<li class="nav-item"><a class="nav-link" href="/logout">Logout</a>
+								</li>
+								</c:when>
+								<c:when test="${loggedUser == null}">
+							<li class="nav-item"><a class="nav-link" href="/logout">Login</a>
 							</li>
+							</c:when>
+							</c:choose>
 							<li class="nav-item"><a class="nav-link" href="/room/1">Room
 									Test</a></li>
 							<li class="nav-item"><a class="nav-link" id="myBtn"

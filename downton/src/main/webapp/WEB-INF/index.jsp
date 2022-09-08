@@ -62,13 +62,6 @@
 											placeholder="Password" path="password" />
 										<form:label path="password">Password</form:label>
 									</div>
-									<!-- <div class="mb-3">
-										<div class="form-check">
-											<input type="checkbox" class="form-check-input"
-												id="dropdownCheck"> <label class="form-check-label"
-												for="dropdownCheck"> Remember me </label>
-										</div>
-									</div> -->
 									<button type="submit" class="btn btn-secondary btn-lg mt-3">Sign
 										in</button>
 								</form:form>
