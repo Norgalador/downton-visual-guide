@@ -45,9 +45,11 @@
 }
 
 .bg-image {
-    background-image: url('https://images.alphacoders.com/756/756534.jpg');
-    background-size: 100%;
-    background-color: rgba(250, 182, 162, 0.15);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+    position: fixed;
   
 }
 
