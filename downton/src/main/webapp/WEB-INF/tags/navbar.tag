@@ -62,8 +62,8 @@
 							<c:if test="${loggedUser != null}">
 								<li class="nav-item"><a class="nav-link" href="/dashboard">Home</a></li>
 							</c:if>
-							<li class="nav-item"><a class="nav-link" href="/room/1">Room
-									Test</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="/room/1">Room
+									Test</a></li> -->
 							<li class="nav-item"><a class="nav-link" id="myBtn"
 								href="#!">About</a></li>
 
