@@ -24,7 +24,7 @@ public class Character {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty(message="What is the name of the room?")
+	@NotEmpty(message="What is the name of the character?")
 	private String name;
 	
 	@Column(updatable=false)

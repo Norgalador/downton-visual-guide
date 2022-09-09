@@ -74,7 +74,7 @@ public class RoomController {
 	}
 	
 	@GetMapping("/room/1")
-	public String viewLibrary(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, Room room) {
+	public String viewLibrary(HttpSession session, Model model, @ModelAttribute("comments") Comment comment, @ModelAttribute("room") Room room) {
 		Long id = (long) 1;
 		User user = users.findById((Long)session.getAttribute("loggedUser"));
 		model.addAttribute("user", user);

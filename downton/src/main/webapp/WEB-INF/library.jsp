@@ -59,9 +59,9 @@
 		<!-- End navbar -->
 	</header>
 	<section>
-		<div class="bg-image1 vh-100 mask">
+		<div class="bg-image1 vh-100 mask" >
 			<div class="mask"
-				style="background-color: rgba(250, 182, 162, 0.15);"></div>
+				style="background-color: rgba(250, 182, 162, 0.15);"><img src="${room.image}"/></div>
 
 			<!-- Dropdown room info section -->
 			<div class="container">
@@ -70,7 +70,7 @@
 
 					<button class="btn btn-secondary col-4 opacity-75 mb-3"
 						id="room-info-btn" data-bs-toggle="collapse"
-						data-bs-target="#roominfo">Learn about the Library</button>
+						data-bs-target="#roominfo">Learn about the <c:out value="${room.name}"/></button>
 
 					<div class="collapse card card-body opacity-75 mb-3" id="roominfo">
 						<div class="card-body">
