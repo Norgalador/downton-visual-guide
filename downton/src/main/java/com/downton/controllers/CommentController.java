@@ -84,29 +84,8 @@ public class CommentController {
 			} 
 			return "redirect:/room/1";
 		}
-//		@GetMapping("/comment3/edit/{id}")
-//		public String editComment3(@PathVariable Long id, HttpSession session, @ModelAttribute("editComment") Comment comment, Model model) {
-//			if(session.getAttribute("loggedInUser")!= null) {
-//				return "dashboard.jsp";
-//			}
-//			else if ((session.getAttribute("loggedUser")).equals(comments.getOne(id).getUser().getId())) {
-//				Comment editComment = comments.getOne(id);
-//				model.addAttribute("editComment", editComment);
-//				return "edit.jsp";
-//			} 
-//			return "redirect:/room/3";
-////		}
-//
-//		@PutMapping("/edit/room4/{id}")
-//		public String update4(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {
-//			if (session.getAttribute("loggedUser") == null) {
-//				return "redirect:/logout";
-//				} else if (result.hasErrors()) {
-//				return "room.jsp";
-//			}
-//			comments.update(comment);
-//			return "redirect:/room/4";
-//		}
+
+
 //		
 //		@PutMapping("/edit/room3/{id}")
 //		public String update3(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("comments") Comment comment, BindingResult result, Model model) {

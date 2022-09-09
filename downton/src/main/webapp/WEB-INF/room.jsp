@@ -123,6 +123,7 @@
 			<!-- End comments section -->
 		</div>
 	</section>
+	<p>Hello World</p>
 
 
 	<!-- JavaScript Bundle with Popper -->
